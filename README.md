@@ -85,7 +85,7 @@
     # This is Git's per-user configuration file.
     [user]
         name = T.Saouchi
-        email = toufik.saouchi@gmail.com
+        email = saouchi.toufik@gmail.com
         
     [core]
         autocrlf = false
