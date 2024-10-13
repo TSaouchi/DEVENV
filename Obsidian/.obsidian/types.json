@@ -1,0 +1,11 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "Date": "date",
+    "Participants": "multitext",
+    "End/Ended in": "date",
+    "Start in": "date"
+  }
+}

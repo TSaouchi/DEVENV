@@ -1,0 +1,15 @@
+{
+  "readableLineLength": false,
+  "showLineNumber": true,
+  "attachmentFolderPath": "./attachements",
+  "showUnsupportedFiles": true,
+  "newFileLocation": "current",
+  "alwaysUpdateLinks": true,
+  "trashOption": "local",
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
+}
