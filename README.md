@@ -36,7 +36,9 @@
         "color": "red"
     }]
     ``` 
-
+- To use the same powershell in vscode and windows do:
+    - Settings > search "powershell" > set Windows Powershell
+    
 ## Install terminal font 
 1. Enable script execution on a powersehll terminal 
     - Check terminal execution policy 
