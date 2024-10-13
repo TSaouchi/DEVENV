@@ -6,11 +6,17 @@
     - Pylance
     - Jupyter
     - diff
+    - Theme : Sublime Material Theme
+    - json crack
+    - Comment Anchor
+    - spacetime
+    - Anchor comment
+    - rainbow indent
     - git graph
     - Data Wrangler
     - ...
 - Obsidian 
-- Git
+- Git + Github settings to use ssh key
 - Font Powershell and terminals 
     - Hack font 
 - Cygwin, MSYS or else for C/C++ compilor and debug 
@@ -102,9 +108,6 @@
         ci = commit 
         a = add
         aa = add -A
-        pushall = "!f() { 
-                        for remote in $(git remote); do 
-                            git push $remote --all && git push $remote --tags; 
-                        done; 
-                    }; f"
+        pushall = "!f() { for remote in $(git remote); do git push $remote --all && git push $remote --tags; done; }; f"
+	    pushthis = "!f() { for remote in $(git remote); do git push $remote $(git branch --show-current); done; }; f"
     ```
