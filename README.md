@@ -103,15 +103,15 @@ Import-Module -Name Terminal-Icons
         editor = \"C:\\Users\\toufi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
 
     [merge]
-        tool = code.cmd --wait
+        tool = code --wait
 
     [mergetool "code"]
-        cmd = code.cmd --wait $MERGED
+        cmd = code --wait $MERGED
 
     [diff]
         tool = default-difftool
     [difftool "default-difftool"]
-        cmd = code.cmd --wait --diff $LOCAL $REMOTE
+        cmd = code --wait --diff $LOCAL $REMOTE
 
     [alias]
         st = status
@@ -119,7 +119,7 @@ Import-Module -Name Terminal-Icons
         a = add
         aa = add -A
         pushall = "!f() { for remote in $(git remote); do git push $remote --all && git push $remote --tags; done; }; f"
-	    pushthis = "!f() { for remote in $(git remote); do git push $remote $(git branch --show-current); done; }; f"
+	pushthis = "!f() { for remote in $(git remote); do git push $remote $(git branch --show-current); done; }; f"
     ```
 2. Install ``posh-git`` using:
    ```powershell
