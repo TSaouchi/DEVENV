@@ -98,21 +98,18 @@ Import-Module -Name Terminal-Icons
         email = saouchi.toufik@gmail.com
         
     [core]
-        autocrlf = false
-        eol = CRLF
-        editor = \"C:\\Users\\toufi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
-
-    [merge]
-        tool = code --wait
-
-    [mergetool "code"]
-        cmd = code --wait $MERGED
+  	editor = code --wait
 
     [diff]
-        tool = default-difftool
-    [difftool "default-difftool"]
-        cmd = code --wait --diff $LOCAL $REMOTE
-
+	tool = vscode
+    [difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+	
+    [merge]
+	tool = vscode
+    [mergetool "vscode"]
+	cmd = code --wait $MERGED
+    
     [alias]
         st = status
         ci = commit 
@@ -120,7 +117,6 @@ Import-Module -Name Terminal-Icons
         aa = add -A
         pushall = "!f() { for remote in $(git remote); do git push $remote --all && git push $remote --tags; done; }; f"
 	    pushthis = "!f() { for remote in $(git remote); do git push $remote $(git branch --show-current); done; }; f"
-    
     ```
     
 2. Install ``posh-git`` using:
