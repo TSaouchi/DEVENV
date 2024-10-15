@@ -80,6 +80,14 @@
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     ```
     - Close and Restart VScode
+6. Install terminal Icons using:
+```powershell
+Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
+```
+- Import the module in ``$PROFILE`` using:
+```powershell
+Import-Module -Name Terminal-Icons
+```
 
 ## Git configuration 
 1. Past the follwing in ``git config --global -e``
@@ -113,3 +121,11 @@
         pushall = "!f() { for remote in $(git remote); do git push $remote --all && git push $remote --tags; done; }; f"
 	    pushthis = "!f() { for remote in $(git remote); do git push $remote $(git branch --show-current); done; }; f"
     ```
+2. Install ``posh-git`` using:
+   ```powershell
+   Install-Module posh-git -Scope CurrentUser
+   ```
+   - Copy bellow line in the machine ``$PROFILE`` file to enable the import of ``posh-git``
+   ```powershell
+   Import-Module posh-git
+   ```
