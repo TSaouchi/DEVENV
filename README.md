@@ -119,8 +119,10 @@ Import-Module -Name Terminal-Icons
         a = add
         aa = add -A
         pushall = "!f() { for remote in $(git remote); do git push $remote --all && git push $remote --tags; done; }; f"
-	pushthis = "!f() { for remote in $(git remote); do git push $remote $(git branch --show-current); done; }; f"
+	    pushthis = "!f() { for remote in $(git remote); do git push $remote $(git branch --show-current); done; }; f"
+    
     ```
+    
 2. Install ``posh-git`` using:
    ```powershell
    Install-Module posh-git -Scope CurrentUser
