@@ -22,7 +22,8 @@
 - Cygwin, MSYS or else for C/C++ compilor and debug 
 - Keepass for passwords management 
 - Python 
-- ChatGPT and Claude : AI 
+- ChatGPT and Claude : AI
+- For Windows to replace NVIDIA desktop manger > PowerToys
 
 ## VScode settings to change 
 - Save delay to ``afterdelay`` delay time ``1ms``
