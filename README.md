@@ -119,6 +119,33 @@ Import-Module -Name Terminal-Icons
         pushall = "!f() { for remote in $(git remote); do git push $remote --all && git push $remote --tags; done; }; f"
 	    pushthis = "!f() { for remote in $(git remote); do git push $remote $(git branch --show-current); done; }; f"
     ```
+    - If confirmation needed with the push use this:
+    ```powershell
+    [alias]
+	    pushall = "!f() { \
+	        echo 'Are you sure you want to push all branches and tags to all remotes? (y/n)'; \
+	        read answer; \
+	        if [ \"$answer\" = \"y\" ]; then \
+	            for remote in $(git remote); do \
+	                git push $remote --all && git push $remote --tags; \
+	            done; \
+	        else \
+	            echo 'Push aborted.'; \
+	        fi; \
+	    }; f"
+
+	    pushthis = "!f() { \
+	        echo 'Are you sure you want to push the current branch to all remotes? (y/n)'; \
+	        read answer; \
+	        if [ \"$answer\" = \"y\" ]; then \
+	            for remote in $(git remote); do \
+	                git push $remote $(git branch --show-current); \
+	            done; \
+	        else \
+	            echo 'Push aborted.'; \
+	        fi; \
+	    }; f"
+    ```
     
 2. Install ``posh-git`` using:
    ```powershell
