@@ -22,7 +22,8 @@
 - Cygwin, MSYS or else for C/C++ compilor and debug 
 - Keepass for passwords management 
 - Python 
-- ChatGPT and Claude : AI 
+- ChatGPT and Claude : AI
+- For Windows to replace NVIDIA desktop manger > PowerToys
 
 ## VScode settings to change 
 - Save delay to ``afterdelay`` delay time ``1ms``
@@ -80,6 +81,14 @@
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     ```
     - Close and Restart VScode
+6. Install terminal Icons using:
+```powershell
+Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
+```
+- Import the module in ``$PROFILE`` using:
+```powershell
+Import-Module -Name Terminal-Icons
+```
 
 ## Git configuration 
 1. Past the follwing in ``git config --global -e``
@@ -90,21 +99,18 @@
         email = saouchi.toufik@gmail.com
         
     [core]
-        autocrlf = false
-        eol = CRLF
-        editor = \"C:\\Users\\toufi\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
-
-    [merge]
-        tool = code.cmd --wait
-
-    [mergetool "code"]
-        cmd = code.cmd --wait $MERGED
+  	editor = code --wait
 
     [diff]
-        tool = default-difftool
-    [difftool "default-difftool"]
-        cmd = code.cmd --wait --diff $LOCAL $REMOTE
-
+	tool = vscode
+    [difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+	
+    [merge]
+	tool = vscode
+    [mergetool "vscode"]
+	cmd = code --wait $MERGED
+    
     [alias]
         st = status
         ci = commit 
@@ -113,3 +119,39 @@
         pushall = "!f() { for remote in $(git remote); do git push $remote --all && git push $remote --tags; done; }; f"
 	    pushthis = "!f() { for remote in $(git remote); do git push $remote $(git branch --show-current); done; }; f"
     ```
+    - If confirmation needed with the push use this:
+    ```powershell
+    [alias]
+	    pushall = "!f() { \
+	        echo 'Are you sure you want to push all branches and tags to all remotes? (y/n)'; \
+	        read answer; \
+	        if [ \"$answer\" = \"y\" ]; then \
+	            for remote in $(git remote); do \
+	                git push $remote --all && git push $remote --tags; \
+	            done; \
+	        else \
+	            echo 'Push aborted.'; \
+	        fi; \
+	    }; f"
+
+	    pushthis = "!f() { \
+	        echo 'Are you sure you want to push the current branch to all remotes? (y/n)'; \
+	        read answer; \
+	        if [ \"$answer\" = \"y\" ]; then \
+	            for remote in $(git remote); do \
+	                git push $remote $(git branch --show-current); \
+	            done; \
+	        else \
+	            echo 'Push aborted.'; \
+	        fi; \
+	    }; f"
+    ```
+    
+2. Install ``posh-git`` using:
+   ```powershell
+   Install-Module posh-git -Scope CurrentUser
+   ```
+   - Copy bellow line in the machine ``$PROFILE`` file to enable the import of ``posh-git``
+   ```powershell
+   Import-Module posh-git
+   ```

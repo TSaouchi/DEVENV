@@ -1,0 +1,10 @@
+{
+  "id": "obsidian-orthography",
+  "name": "Orthography",
+  "version": "3.0.1",
+  "minAppVersion": "1.5.12",
+  "description": "Check & fix orthography errors in text.",
+  "author": "Denisoed",
+  "authorUrl": "https://github.com/denisoed",
+  "isDesktopOnly": false
+}
