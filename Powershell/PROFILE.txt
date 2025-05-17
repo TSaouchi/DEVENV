@@ -1,2 +1,0 @@
-$env:Path += ";C:\Users\toufi\AppData\Local\Programs\oh-my-posh\bin;C:\msys64\ucrt64\bin;C:\Program Files\Alire\bin"
-oh-my-posh init pwsh --config 'C:\Users\toufi\AppData\Local\Programs\Oh-my-Posh\themes\amro.omp.json' | Invoke-Expression
